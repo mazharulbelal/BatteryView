@@ -6,7 +6,7 @@
 import AudioToolbox
 import SwiftUI
 
-struct BatteryView: View {
+public struct BatteryView: View {
     @Binding var percentage: Int
     var isCharging: Bool = false
     var height: CGFloat = 80
