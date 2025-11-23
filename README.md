@@ -2,8 +2,8 @@
 
 A lightweight, customizable SwiftUI battery indicator view with multiple themes, smooth animations, accessibility, and charging state support. Distributed as a Swift Package for easy integration.
 
-- Swift: 6.2
-- Platforms: iOS 16+
+- Swift: ```6.2```
+- Platforms: ```iOS 16+1```
 - Package name: BatteryView
 - Product: Library (BatteryView)
 
@@ -32,8 +32,9 @@ Installation (Swift Package Manager)
 - Add the library BatteryView to your target
 
 Or in Package.swift of a client project:
+```
 dependencies: [
-    .package(url: "https://github.com/your-org/BatteryView.git", from: "1.0.0")
+    .package(url: "https://github.com/mazharulbelal/BatteryView.git", from: "1.0.0")
 ]
 
 targets: [
@@ -66,6 +67,7 @@ struct ContentView: View {
         .padding()
     }
 }
+```
 
 API Overview
 
@@ -102,15 +104,18 @@ Built-in Presets
 You can start with a preset and customize fields as needed.
 
 Example: Changing Theme and Geometry
+
+```
 @State private var level = 44
 
 var body: some View {
     VStack(spacing: 16) {
         BatteryView(percentage: $level, isCharging: false, style: .neon)
             .frame(height: 72)
-
+            
         BatteryView(percentage: $level, isCharging: true, style: .highContrast)
             .frame(height: 64)
+            
 
         let custom = BatteryStyle.highContrast
         var tuned = custom
@@ -123,3 +128,4 @@ var body: some View {
     }
     .padding()
 }
+```
